@@ -23,7 +23,7 @@ class Vampire {
   get numberOfVampiresFromOriginal() {
     let numberFromOriginal = 0;
     let currentVampire = this;
-    while(currentVampire.creator) {
+    while (currentVampire.creator) {
       currentVampire = currentVampire.creator;
       numberFromOriginal++;
     }
@@ -89,6 +89,8 @@ class Vampire {
   closestCommonAncestor(vampire) {
 
   }
+
+
 }
 
 module.exports = Vampire;
