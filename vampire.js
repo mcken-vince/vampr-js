@@ -21,15 +21,9 @@ class Vampire {
 
   // Returns the number of vampires away from the original vampire this vampire is
   get numberOfVampiresFromOriginal() {
-<<<<<<< HEAD
-    let currentVampire = this;
-    let numberFromOriginal = 0;
-    while(currentVampire.creator) {
-=======
     let numberFromOriginal = 0;
     let currentVampire = this;
     while (currentVampire.creator) {
->>>>>>> traversal
       currentVampire = currentVampire.creator;
       numberFromOriginal++;
     }
@@ -42,8 +36,6 @@ class Vampire {
     } else {
       return false;
     }
-<<<<<<< HEAD
-=======
   }
 
   /** Tree traversal methods **/
@@ -84,13 +76,9 @@ class Vampire {
       millennialVamps = millennialVamps.concat(child.allMillennialVampires);
     }
     return millennialVamps;
->>>>>>> traversal
   }
 
   closestCommonAncestor(vampire) {
-<<<<<<< HEAD
-    
-=======
     const myLineage = [];
     const yourLineage = [];
 
@@ -115,7 +103,6 @@ class Vampire {
         }
       }   
     }
->>>>>>> traversal
   }
 }
 module.exports = Vampire;
