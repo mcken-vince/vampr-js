@@ -87,10 +87,31 @@ class Vampire {
   // * when comparing Ansel and Sarah, Ansel is the closest common anscestor.
   // * when comparing Ansel and Andrew, Ansel is the closest common anscestor.
   closestCommonAncestor(vampire) {
+    const myLineage = [];
+    const yourLineage = [];
 
+    let currentV = this;
+    // create this's lineage array
+    while (currentV) {
+      myLineage.push(currentV);
+      currentV = currentV.creator;
+    }
+
+    currentV = vampire;
+    // create vampire's lineage array
+    while (currentV) {
+      yourLineage.push(currentV);
+      currentV = currentV.creator;
+    }
+
+    for (const ancestor of myLineage) {
+      for (const yourAncestor of yourLineage) {
+        if (ancestor.name === yourAncestor.name) {
+          return yourAncestor;
+        }
+      }   
+    }
   }
-
-
 }
 
 module.exports = Vampire;
